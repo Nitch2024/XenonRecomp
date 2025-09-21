@@ -258,3 +258,10 @@ On Windows, you can use the clang-cl toolset and open the project in Visual Stud
 ## Special Thanks
 
 This project could not have been possible without the [Xenia](https://github.com/xenia-project/xenia) emulator, as many parts of the CPU code conversion process has been implemented by heavily referencing its PPC code translator. The project also uses code from [Xenia Canary](https://github.com/xenia-canary/xenia-canary) to patch XEX binaries.
+
+## Example Windows Build with VS 2022
+
+1. Open a "Developer Command Prompt for VS 2022"
+2. Go to your clone folder
+3. Run the following command line: cmake -G "Visual Studio 17 2022" -T="ClangCL"
+4. Open XenonRecomp-ALL.sln in VS 2022
