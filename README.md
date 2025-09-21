@@ -1,3 +1,16 @@
+# XenonRecomp With Minor Modifications
+
+1. Automatic simplistic search for switch/case tables (Should reduce the cases of empty TOML files). This is likely not robust but should be a better start than what is currently available.
+2. Automatic generation of restgprlr_14_address, savegprlr_14_address, restfpr_14_address, savefpr_14_address, restvmx_14_address, savevmx_14_address, restvmx_64_address, savevmx_64_address
+3. Some opcode additions for decompilation:  PPC_INST_VMAXUB, PPC_INST_VRLW, PPC_INST_VRLW128, PPC_INST_VPKUHUM128, PPC_INST_VSLO128
+
+# Example Windows Build with VS 2022
+
+1. Open a "Developer Command Prompt for VS 2022"
+2. Go to your clone folder
+3. Run the following command line: cmake -G "Visual Studio 17 2022" -T="ClangCL"
+4. Open XenonRecomp-ALL.sln in VS 2022
+
 # XenonRecomp
 
 XenonRecomp is a tool that converts Xbox 360 executables into C++ code, which can then be recompiled for any platform.
@@ -258,10 +271,3 @@ On Windows, you can use the clang-cl toolset and open the project in Visual Stud
 ## Special Thanks
 
 This project could not have been possible without the [Xenia](https://github.com/xenia-project/xenia) emulator, as many parts of the CPU code conversion process has been implemented by heavily referencing its PPC code translator. The project also uses code from [Xenia Canary](https://github.com/xenia-canary/xenia-canary) to patch XEX binaries.
-
-## Example Windows Build with VS 2022
-
-1. Open a "Developer Command Prompt for VS 2022"
-2. Go to your clone folder
-3. Run the following command line: cmake -G "Visual Studio 17 2022" -T="ClangCL"
-4. Open XenonRecomp-ALL.sln in VS 2022
